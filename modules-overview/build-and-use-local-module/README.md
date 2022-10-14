@@ -6,8 +6,6 @@ Found new infrastructure to build. This will allow me to get some hands on exper
 
 -----
 
-
-# Getting Started
 # Getting Started
 
 In the last tutorial, you used modules from the Terraform Registry to create a VPC and an EC2 instance in AWS. While using existing Terraform modules correctly is an important skill, every Terraform practitioner will also benefit from learning how to create modules. In fact, we recommend that every Terraform configuration be created with the assumption that it may be used as a module, because doing so will help you design your configurations to be flexible, reusable, and composable.
