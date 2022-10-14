@@ -1,4 +1,4 @@
-# Terraform -- Getting a Better Understanding
+# HashiCorp Terraform -- Build and Use a Local Module
 
 # Overview
 
@@ -8,12 +8,13 @@ Found new infrastructure to build. This will allow me to get some hands on exper
 
 
 # Getting Started
+# Getting Started
 
-### Web-App-Bucket
+In the last tutorial, you used modules from the Terraform Registry to create a VPC and an EC2 instance in AWS. While using existing Terraform modules correctly is an important skill, every Terraform practitioner will also benefit from learning how to create modules. In fact, we recommend that every Terraform configuration be created with the assumption that it may be used as a module, because doing so will help you design your configurations to be flexible, reusable, and composable.
 
-Generic web application architecture including:
-- S3 Bucket for Static Web Hosting
+As you may already know, Terraform treats every configuration as a module. When you run terraform commands, or use Terraform Cloud or Terraform Enterprise to remotely run Terraform, the target directory containing Terraform configuration is treated as the root module.
 
+In this tutorial, you will create a module to manage AWS S3 buckets used to host static websites.
 
 ----
 
@@ -120,3 +121,4 @@ If you are tracking changes to your module in a version control system, such as 
 ----
 [tfhome](https://www.terraform.io)
 [tfdocs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+[hashiCorpLearn](https://learn.hashicorp.com/)
