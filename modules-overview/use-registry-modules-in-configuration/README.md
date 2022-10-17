@@ -33,3 +33,45 @@ The example configuration sets two arguments: source and version.
     2. The version argument is not required, but we highly recommend you include it when using a Terraform module. For supported sources, this argument specifies the module version Terraform will load. Without the version argument, Terraform will load the latest version of the module. In this tutorial, you will specify an exact version number for the modules you use. Refer to the module documentation for more methods to specify module versions.
 
 Terraform treats other arguments in the module blocks as input variables for the module. 
+
+---
+## Running Terraform
+
+Run the following to ensure ***terraform*** will only perform the expected
+actions:
+
+```sh
+terraform fmt
+terraform validate
+terraform plan
+terraform init
+terraform apply
+```
+## Tearing Down the Terraform Infrastructure
+
+Run the following to verify that ***terraform*** will only impact the expected
+nodes and then tear down the cluster.
+
+```sh
+terraform plan
+terraform destroy
+```
+---
+
+# Understand how modules work
+
+When using a new module for the first time, you must run either terraform init or terraform get to install the module. When you run these commands, Terraform will install any new modules in the .terraform/modules directory within your configuration's working directory. For local modules, Terraform will create a symlink to the module's directory. Because of this, any changes to local modules will be effective immediately, without having to reinitialize or re-run terraform get.
+
+After following this tutorial, your .terraform/modules directory will look like the following.
+```sh
+.terraform/modules/
+├── ec2_instances
+├── modules.json
+└── vpc
+```
+---
+
+[tfhome](https://www.terraform.io)
+[tfdocs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+[hashiCorpLearn](https://learn.hashicorp.com/)
+[hashiCorpdeveloper](https://developer.hashicorp.com/)

@@ -24,16 +24,21 @@ module "vpc" {
    tags = var.vpc_tags
 }
 
-module "ec2_instance" {
+module "ec2_instances" {
     source = "terraform-aws-modules/ec2-instance/aws"
     version = "3.5.0"
     count = 2
 
     name = "my-ec2-cluster"
 
-    ami = "ami-0c5204531f799e0c6"  # --> make into variable
+    ami = "ami-026b57f3c383c2eec"  # --> make into variable
     instance_type = "t2.micro"  # --> make into variable
     vpc_security_group_ids = [module.vpc.default_security_group_id]
     subnet_id = module.vpc.public_subnets[0]
+
+    tags = {
+        Terraform = "true"
+        Enviroment = "dev"
+    }
   
 }
