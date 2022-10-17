@@ -56,7 +56,7 @@ delete: s3://unique-name-of-s3-bucket/error.html
 delete: s3://unique-name-of-s3-bucket/index.html
 ```
 
-## Tearing Down the Terraformed Infrastructure
+## Tearing Down the Terraform Infrastructure
 
 Run the following to verify that ***terraform*** will only impact the expected
 nodes and then tear down the cluster.
